@@ -1,0 +1,1366 @@
+:: StoryTitle
+The Girl and the Dust
+
+
+:: StoryData
+{
+  "ifid": "B2C3D4E5-F6A7-8901-BCDE-FA2345678901",
+  "format": "Harlowe",
+  "format-version": "3.3.8",
+  "start": "Start",
+  "zoom": 1
+}
+
+
+:: Arrival at Bolvangar {"position":"2000,200","size":"100,100"}
+
+
+
+Bolvangar: a concrete-and-metal compound planted in endless white. Wire fences, floodlights, guards. It looks like a prison disguised as a school.
+
+(if: $hasDocs is true)[
+Lyra remembers the documents from Jordan's cellars. This didn't start here. They've been experimenting for decades. The horror has deep roots.
+]
+
+Pan shifts to a white ermine, vanishing against the snow. *"We need to get inside without being seen."*
+
+Lyra spots a ventilation shaft on the building's side. She also sees a service door with a single guard.
+
+[[Crawl through the ventilation shaft->Ventilation Infiltration]]
+[[Distract the guard and slip through the door->Door Infiltration]]
+
+
+:: Billy Costa {"position":"1500,250","size":"100,100"}
+
+(set: $sawBilly to true)
+
+In a dark corner of the ship, Lyra finds a boy sitting alone. Billy Costa, Ma Costa's son. He was rescued days ago, but something is terribly wrong.
+
+Billy clutches a piece of dried fish against his chest, holding it the way you'd hold a dæmon. But there is no dæmon beside him. They performed the **intercision**.
+
+*"Where's Ratter?"* he murmurs, voice hollow. *"Where's my Ratter?"*
+
+Pan retreats to Lyra's chest, and she holds him so tight it hurts. Seeing a child without their dæmon is like seeing someone whose soul has been ripped out and left an empty shape behind.
+
+*"Lyra,"* says Pan, his voice shaking, *"we have to stop this. Whatever it costs."*
+
+Lyra doesn't cry. She clenches her fists.
+
+(set: $panState to "determined")
+
+[[Return to the ship->The Gyptian Ship]]
+
+
+:: Bittersweet Ending {"position":"3800,300","size":"100,100"}
+
+# The Price of Rescue
+
+Lyra got Roger out of Bolvangar. But not all the children. Some were left behind, and the weight of it sits like a stone on her chest.
+
+Roger walks beside her in silence. Snow crunches underfoot.
+
+(if: (history:) contains "Too Late")[
+Roger is not the same. He stares at the horizon with empty eyes, searching for something that's no longer there. Sometimes he calls for Salcilia in his sleep.
+
+Lyra takes his hand and doesn't let go. She can't undo what happened. But she can be here.
+
+Pan shifts constantly — cat, bird, mouse — restless, reflecting Lyra's guilt.
+](else:)[
+Roger holds Salcilia tight against his chest. *"Lyra, will we go back for the others?"*
+
+*"Yes,"* says Lyra. And she means it.
+
+Pan takes the shape of a fox: sharp, watchful, ready for whatever comes.
+]
+
+The lights of Bolvangar die behind them. The aurora keeps burning.
+
+Lyra looks north. The journey is not over.
+
+
+END — The Bittersweet Path
+Good intentions are not always enough. But Lyra doesn't give up.
+
+
+
+:: Bolvangar Doors {"position":"2450,200","size":"100,100"}
+
+
+The corridors of Bolvangar are white, lit by a fluorescent hum. Every door looks the same. Pan sniffs the air in dog form.
+
+*"I can't tell which way, Lyra. This whole place smells of fear."*
+
+Lyra picks a door at random and pushes it open...
+
+(goto: (either: "Children's Dormitory", "Empty Laboratory", "Bolvangar Office"))
+
+
+:: Bolvangar Office {"position":"2600,300","size":"100,100"}
+
+An elegant study that doesn't belong in this place. A fur coat hangs on the rack. A perfume Lyra recognizes instantly.
+
+*"Mrs Coulter,"* Pan whispers. *"She's here."*
+
+(if: $coulterRoute is true)[
+A shudder runs through Lyra. She remembers the golden monkey seizing Pan, the paperweight, the desperate flight through London.
+
+*"This time I'm ready,"* she says.
+]
+
+On the desk: maps of the North, lists of children's names, and a report titled *"Phase 3 Results: Complete Intercision."* The data is cold, clinical. It speaks of children as numbers.
+
+(set: $allies to $allies + 1)
+
+[[Find Roger->Finding Roger]]
+[[Try another door->Bolvangar Doors]]
+
+
+:: Call for Help {"position":"3200,200","size":"100,100"}
+
+(set: $panState to "desperate")
+
+Lyra sprints to the nearest window and screams with everything she has: *"GYPTIANS!! HERE!! THE CHILDREN ARE HERE!!"*
+
+Pan launches himself through the window as a hawk, shrieking.
+
+(if: $allies >= 4)[
+The gyptians, who'd surrounded the station waiting for the signal, burst in through every entrance. John Faa leads the charge.
+
+The guard holding Roger flees in the chaos. Lyra pulls him free from the cage.
+
+*"Just in time!"* Roger says, tears streaming down his face.
+](else:)[
+The gyptians are too few. The response comes slowly. By the time they arrive, Lyra has had to fight the guard alone, and Roger has a cut on his forehead.
+
+But they're alive. And together.
+]
+
+[[Get all the children out!->The Escape]]
+
+
+:: Chase Scene {"position":"2300,300","size":"100,100"}
+
+Lyra sprints through the snow, heart hammering. Pan flies ahead as a swallow. Guards shout behind her.
+
+*"There!"* Pan screams, diving toward a gap under the fence.
+
+Lyra slides through, scraping her palms raw, and clambers in through a broken basement window.
+
+She's inside. But they know someone's here. She'll have to move fast.
+
+(set: $panState to "frantic")
+
+[[Find the children->Bolvangar Doors]]
+
+
+:: Children's Dormitory {"position":"2600,100","size":"100,100"}
+
+The door opens onto a large room filled with small beds. Dozens of children, all clutching their dæmons close. Some sleep. Some stare at the ceiling with eyes that have seen too much.
+
+A girl approaches. *"Are you new? Don't let them take you upstairs. The ones who go up... come back wrong."*
+
+Lyra scans the faces. No Roger.
+
+*"Do you know a boy called Roger?"*
+
+*"Roger's in the other room. End of the corridor."*
+
+[[Go find Roger->Finding Roger]]
+[[Try another door->Bolvangar Doors]]
+
+
+:: Consult Alethiometer Ship {"position":"1500,450","size":"100,100"}
+
+
+Lyra finds a quiet corner and takes out the alethiometer. The needles swing and settle on three symbols: **the Baby**, **the Skull**, and **(either: "the Beehive", "the Anchor", "the Candelabrum")**.
+
+She closes her eyes. Concentrates. The images flow...
+
+[[The children are in mortal danger at Bolvangar — there's no time left->Correct Reading 2]]
+[[The Gobblers have a secret underwater base->Wrong Reading 2]]
+
+
+:: Correct Reading 1 {"position":"700,300","size":"100,100"}
+
+(set: $accuracy to $accuracy + 1)
+
+A certainty floods through Lyra that she can't explain. The needles tremble — almost as if they're nodding.
+
+Pan stares at her. *"Are you sure?"*
+
+*"Yes,"* Lyra says. *"Sure as breathing."*
+
+Something is changing in her. She's learning to read the alethiometer in a way no one taught her. As if the instrument recognizes something within her.
+
+[[Back to the rooftops->Jordan Rooftops]]
+
+
+:: Correct Reading 2 {"position":"1650,400","size":"100,100"}
+
+(set: $accuracy to $accuracy + 1)
+
+The long needle shudders to a halt, confirming. Lyra feels ice in her veins.
+
+*"They're doing terrible things there, Pan,"* she says. *"And Roger is among them."*
+
+Pan's eyes harden. *"Then we get there in time."*
+
+[[Return to the ship->The Gyptian Ship]]
+
+
+:: Create Distraction {"position":"3200,300","size":"100,100"}
+
+Lyra grabs a bottle of chemicals from a shelf and hurls it at the machine's instruments. Glass shatters. Liquid hisses and smokes. The technicians scramble backward.
+
+Pan darts across the guard's face as a swallow, blinding him.
+
+*"ROGER, RUN!"* Lyra screams.
+
+Roger scrambles out of the cage, clutching Salcilia to his chest. Smoke fills the laboratory.
+
+*"This way!"* Lyra drags him into the corridor.
+
+[[We have to escape!->The Escape]]
+
+
+:: Departure North {"position":"1800,200","size":"100,100"}
+
+The gyptian fleet sails north. Days grow shorter, nights longer. The aurora borealis drapes the sky in curtains of green and violet.
+
+(if: $knowsMotherTruth is true)[
+Lyra watches the lights and thinks about Mrs Coulter. *"How can someone capable of such terrible things be my mother, Pan?"*
+
+Pan presses against her neck. *"You don't have to be like her, Lyra. You choose who you are."*
+](else:)[
+Lyra gazes up in wonder. *"It's the most beautiful thing I've ever seen, Pan."*
+
+Pan nods in ermine form. *"Beautiful and dangerous. Like everything up north."*
+]
+
+After days of travel, the lookouts spot metal structures rising from the snow. **Bolvangar**.
+
+[[Approach Bolvangar->Arrival at Bolvangar]]
+
+
+:: Destroy Machine {"position":"3200,100","size":"100,100"}
+
+(set: $panState to "fierce")
+
+Lyra hurls herself at the machine. She tears at the controls, rips cables, throws levers. Pan, transformed into a snarling wildcat, flings himself at the golden monkey.
+
+Sparks. Smoke. A shriek of metal.
+
+The blade stops centimetres from Roger. The machine dies.
+
+Roger collapses, trembling, Salcilia pressed to his chest. Together. Still together.
+
+*"Lyra..."* he gasps.
+
+No time for embraces. The alarm is screaming through the entire station.
+
+[[We need to run — now!->The Escape]]
+
+
+:: Door Infiltration {"position":"2150,300","size":"100,100"}
+
+
+(set: $dice to (random: 1, 6))
+
+Lyra picks up a stone and hurls it into the darkness. The guard turns his head.
+
+(if: $dice >= 3)[
+He walks off to investigate. Lyra slips through the door like a shadow.
+
+*"Nicely done,"* Pan murmurs.
+
+[[Explore the corridors->Bolvangar Doors]]
+
+](else:)[
+The stone hits the wall too close. The guard spins around and spots her.
+
+*"Halt! Who's there?"*
+
+(set: $allies to $allies - 1)
+(if: $allies < 0)[(set: $allies to 0)]
+
+[[Run->Chase Scene]]
+]
+
+
+:: Eavesdrop Scholars {"position":"550,50","size":"100,100"}
+
+Lyra crawls across the rooftops to a skylight above the Dean's office. Voices drift up through the glass.
+
+*"...the Gobblers are moving closer to Oxford..."*
+*"...Mrs Coulter arrives within days..."*
+*"...we cannot allow her to take the girl..."*
+
+Pan's fur bristles. *"Are they talking about you?"*
+
+Lyra isn't sure. But something shifts inside her — the first pull of a thread she won't be able to stop pulling.
+
+(set: $allies to $allies + 1)
+
+[[Back to the rooftops->Jordan Rooftops]]
+
+
+:: Empty Laboratory {"position":"2600,200","size":"100,100"}
+
+A room full of scientific instruments, monitors beeping in steady rhythm. At its centre stands a metal structure shaped like a cage, divided into two compartments. One for a child. One for their dæmon.
+
+The **intercision machine**.
+
+Pan presses against Lyra's chest, shaking. *"Lyra, this is — this is where they do it."*
+
+(if: $sawBilly is true)[
+Lyra thinks of Billy Costa, clutching a piece of dried fish where his dæmon should be. Rage burns through her like fire.
+
+*"We're going to destroy this thing,"* she says, her voice like steel.
+](else:)[
+It takes Lyra a moment to understand what she's seeing. When she does, the horror is so vast she can't speak.
+
+*"Pan..."* is all she manages.
+]
+
+[[Keep searching for Roger->Finding Roger]]
+[[Try another door->Bolvangar Doors]]
+
+
+:: Escape Failed {"position":"3550,400","size":"100,100"}
+
+Guards cut off the corridor. Lyra and the children are trapped.
+
+Then Ma Costa bursts through a side door with a squad of armed gyptians. *"This way, children!"*
+
+They escape — barely. Some children don't make it out.
+
+(goto: "Bittersweet Ending")
+
+
+:: Escape London {"position":"1200,200","size":"100,100"}
+
+Lyra runs through London's streets with Pan beating his wings above her. Magisterium agents give chase, but dark alleys are the territory of a girl who grew up scaling Oxford's rooftops.
+
+A group of gyptians find her by the Thames. They recognize her instantly. *"You're the Jordan College girl? Ma Costa's been expecting you."*
+
+They pull her onto a boat and vanish into the river.
+
+[[Board the gyptian ship->The Gyptian Ship]]
+
+
+:: Escape With Everyone {"position":"3550,100","size":"100,100"}
+
+Lyra leads the children down the central corridor. The most dangerous route — and the fastest.
+
+(if: $allies >= 5)[
+The gyptians storm through the main doors just as Lyra reaches them. John Faa, rifle in hand, bellows: *"Children first! Get them all out!"*
+
+(if: $foundWitch is true)[
+Above, the witches of Serafina Pekkala's clan loose arrows at the tower guards. The snow fills with winged shadows.
+]
+
+Every child gets out. Every single one.
+
+(goto: "Good Ending")
+
+](else:)[
+Lyra reaches the main doors but there aren't enough reinforcements. Some children make it out. Others are held back by the guards.
+
+Pan says what Lyra can't: *"We can't save them all. Not today."*
+
+(goto: "Bittersweet Ending")
+]
+
+
+:: Escape With Roger {"position":"3550,300","size":"100,100"}
+
+Lyra seizes Roger's hand and drags him into the ventilation shaft. Pan and Salcilia — if she still exists — follow close behind.
+
+They emerge into the Arctic night. Snow stings their faces. They run toward the gyptian camp.
+
+They're safe. But the other children are still inside.
+
+(if: $allies >= 5)[
+The gyptians assault the station as Lyra and Roger flee. Not every child will be saved. But many will.
+
+(goto: "Bittersweet Ending")
+](else:)[
+Lyra looks back at the lights of Bolvangar, blazing against the Arctic dark.
+
+*"We'll come back for them,"* she says, though she doesn't know how.
+
+(goto: "Bittersweet Ending")
+]
+
+
+:: Examine Alethiometer {"position":"550,350","size":"100,100"}
+
+Lyra turns the alethiometer in her hands. It's golden, heavy, the size of a large compass, with thirty-six symbols engraved around its face and four hands that swing freely.
+
+Pan leans in as a mouse. *"How does it work?"*
+
+Lyra turns the wheels. Three symbols align. The long hand begins to move, settling on: **the Anchor**, **the Skull**, and **(either: "the Serpent", "the Hourglass", "the Thunderbolt")**.
+
+*"I think it's trying to tell me about danger,"* Lyra murmurs.
+
+How does she read it?
+
+[[The danger comes from the Magisterium — we need to run->Correct Reading 1]]
+[[Someone close to her is in mortal danger->Wrong Reading 1]]
+
+
+:: Find the Gyptians {"position":"1050,300","size":"100,100"}
+
+(set: $panState to "resolute")
+
+Lyra slips out of Jordan College that same night. Pan flies ahead as an owl, guiding her through darkened streets to the canals.
+
+The gyptians take her in cautiously. Ma Costa, a broad, warm woman whose own son Billy was taken by the Gobblers, brings Lyra aboard her boat.
+
+*"We knew you'd come, child,"* says Ma Costa. *"The gyptians have been searching for the missing children for weeks. And you have something that can help us."*
+
+Her eyes fall on the bulge in Lyra's pocket. The alethiometer.
+
+(set: $allies to $allies + 1)
+
+[[Board the gyptian ship->The Gyptian Ship]]
+
+
+:: Finding Roger {"position":"2800,200","size":"100,100"}
+
+
+
+Lyra pushes open the last door in the corridor and there he is: **Roger**.
+
+Alive. His dæmon Salcilia leaps toward Pan in cat form, and the two dæmons press together.
+
+*"Lyra!"* Roger throws his arms around her. *"I knew you'd come. I knew it."*
+
+Her eyes burn. *"I promised I'd look after you."*
+
+The relief lasts seconds. An alarm screams somewhere in the building. Running footsteps. And then a voice — soft, terrible, familiar:
+
+*"Lyra, darling. Have you come to visit me?"*
+
+**Mrs Coulter** stands at the end of the corridor, the golden monkey on her shoulder.
+
+(if: $knowsMotherTruth is true)[
+Lyra meets her eyes. *"I know who you are. I know you're my mother. And I know what you're doing here."*
+
+Mrs Coulter's face drains of colour.
+](else:)[
+Lyra steps in front of Roger. *"I won't let you touch him."*
+
+Mrs Coulter smiles. *"Lyra, there are so many things you don't know about yourself..."*
+]
+
+A guard grabs Roger and drags him toward the laboratory. Toward the machine.
+
+[[The machine — NOW!->The Machine]]
+
+
+:: Go with Coulter {"position":"1050,100","size":"100,100"}
+
+(set: $coulterRoute to true)
+(set: $panState to "uneasy")
+
+London is a different world. Bright lights, elegant parties, expensive dresses. Mrs Coulter teaches Lyra to behave like a lady, but Pan watches the golden monkey with growing dread.
+
+*"I don't like it,"* Pan whispers at night. *"That monkey watches me when he thinks I'm not looking."*
+
+Days pass. Lyra notices visitors in Magisterium robes. One evening, she finds Mrs Coulter's study door ajar.
+
+[[Search the study->Search the Study]]
+[[Too risky — escape now->Escape London]]
+
+
+:: Good Ending {"position":"3800,100","size":"100,100"}
+
+
+
+# All the Children Home
+
+Bolvangar burns behind them. Snow glitters with reflected flames and the green wash of the aurora borealis.
+
+Lyra walks surrounded by children holding their dæmons close. Roger is at her side, Salcilia purring on his shoulder. Ma Costa weeps with joy.
+
+Pan settles on Lyra's neck in ermine form. Calm. For the first time in weeks, calm.
+
+*"We did it, Pan,"* Lyra whispers.
+
+*"Yes,"* says Pan. *"But look."*
+
+He points north, where the aurora blazes with unearthly intensity. And in the sky, Lyra sees what no one else can see: particles of Dust, falling like golden rain over all of them.
+
+(if: $accuracy >= 2)[
+The alethiometer vibrates in her pocket. She draws it out and the needles speak with a clarity she's never experienced. They tell her this is not the end. That Lord Asriel waits beyond the aurora. That her journey is only beginning.
+]
+
+*"Come on, Pan,"* says Lyra, her eyes on the northern lights. *"We've still got a long way to go."*
+
+
+END — The Good Path
+You showed the courage and determination of Lyra Belacqua.
+
+
+(if: $foundWitch is true)[
+*✦ You discovered the secret encounter with Serafina Pekkala.*
+]
+(if: $hasDocs is true)[
+*✦ You discovered the secret documents in Jordan's cellars.*
+]
+
+(if: $foundWitch is true and $accuracy >= 2 and $sawBilly is true)[
+
+---
+
+But then the alethiometer vibrates with an intensity Lyra has never felt. Pan turns sharply. *"Lyra... do you feel that? The Dust is speaking to you."*
+
+[[Step away from the camp...->Secret Ending]]
+]
+
+
+:: Jordan Cellars {"position":"550,500","size":"100,100"}
+
+(set: $hasDocs to true)
+
+While everyone goes up, Lyra goes down. The cellars of Jordan College are damp, dark, and smell of centuries. Pan shifts to cat form to see in the gloom.
+
+At the end of a corridor she's never explored, she finds a locked door. An old padlock, easily defeated with a bent piece of wire — a trick the kitchen boys taught her.
+
+Inside: a chamber lined with yellowed documents. Lyra reads fragments — reports on the earliest Dust experiments, dated decades before Bolvangar. And the most disturbing part: Jordan College was involved in the research from the beginning.
+
+*"Lyra..."* Pan whispers, *"this is much bigger than we thought."*
+
+She stuffs several documents inside her shirt.
+
+[[Back to the rooftops->Jordan Rooftops]]
+
+
+:: Jordan Rooftops {"position":"450,200","size":"100,100"}
+
+Morning light pours across the rooftops of Jordan College. From up here Lyra can see all of Oxford — the spires, the canals where the gyptian boats are moored, the distant factory smoke.
+
+Pan scrambles along the tiles in ermine form. *"Plenty to do today, Lyra. Where do we start?"*
+
+A quiet moment. The last one for a while.
+
+[[Eavesdrop on the scholars->Eavesdrop Scholars]]
+[[Visit Roger in the kitchens->Visit Roger]]
+[[Examine the alethiometer the Rector gave her->Examine Alethiometer]]
+[[Explore the cellars beneath the college->Jordan Cellars]]
+
+(if: (count: (history:), "Jordan Rooftops") >= 2)[
+
+---
+
+Pan freezes mid-stride. *"Lyra. Roger isn't in the kitchens. He isn't anywhere."*
+
+A cold knot tightens in Lyra's stomach.
+
+[[Something is very wrong->The Disappearance]]
+]
+
+
+:: Search the Study {"position":"1200,50","size":"100,100"}
+
+(set: $allies to $allies + 1)
+
+Pan keeps watch as a moth by the door. Lyra rifles through the drawers. She finds a map with **Bolvangar** circled in red, and a list of names. Children's names. Among them: **Roger Parslow**.
+
+She also finds a folder stamped **"General Oblation Board."** The Gobblers. Mrs Coulter runs the Gobblers.
+
+The golden monkey appears in the doorway. It seizes Pan — Lyra feels the violation like a fist in her chest. She smashes a paperweight into the monkey's face and runs.
+
+[[Run for the canals->Escape London]]
+
+
+:: Secret Ending {"position":"3800,500","size":"100,100"}
+
+
+
+(if: $foundWitch is true and $accuracy >= 2 and $sawBilly is true)[
+
+## The Reader of Dust
+
+While the others rest, Lyra walks away from the camp alone. Pan follows in silence.
+
+She sits in the snow and takes out the alethiometer. But this time she doesn't need to turn the wheels. The needles move on their own, and Lyra reads them the way you'd read an open book.
+
+And then she sees it.
+
+The Dust. Not as particles in a photograph, but as golden rain falling on everything — on her, on Pan, on the snow, on the whole world. It's beautiful. The most beautiful thing she has ever seen.
+
+*"Lyra,"* Pan breathes, *"what is it?"*
+
+*"It's what makes us us, Pan. It's what connects people to their dæmons. It's consciousness. It's... everything."*
+
+Serafina Pekkala's words echo in her mind: *"Dust is what makes us human."*
+
+Lyra understands. She isn't just a girl searching for her friend. She is the child of the prophecy. The one who reads truth without being taught. The one who will decide the fate of Dust.
+
+Pan transforms. For a single moment, he takes the shape of something Lyra doesn't recognize — a creature from another world, luminous and strange. Then he's an ermine again.
+
+*"I'm not ready to settle,"* Pan says.
+
+*"No,"* says Lyra, smiling. *"Not yet. We've got too much living to do."*
+
+She stands, brushes the snow from her coat, and looks north — where Lord Asriel waits. Where the worlds touch. Where everything begins.
+
+
+✦ SECRET END — The Reader of Dust ✦
+You discovered Lyra's true nature and her connection to Dust.
+To reach this ending, you needed: the witch encounter, accurate alethiometer readings, and Billy Costa's story.
+
+
+](else:)[
+
+You haven't unlocked the requirements for the secret ending:
+(if: $foundWitch is false)[
+☐ Find the witch (visit the ship deck 3 times)
+]
+(if: $accuracy < 2)[
+☐ Read the alethiometer accurately at least twice
+]
+(if: $sawBilly is false)[
+☐ Speak with Billy Costa on the gyptian ship
+]
+
+
+[[Return to the start->Start]]
+]
+
+
+:: Ship Deck {"position":"1500,150","size":"100,100"}
+
+
+Lyra climbs to the deck. Cold wind whips her face. Stars blaze above the canals, and far on the horizon, a faint green shimmer.
+
+Pan swoops overhead as a seagull.
+
+(if: (count: (history:), "Ship Deck") >= 3)[
+
+Pan drops onto the railing, hard. *"Lyra! Look!"*
+
+A shadow descends from the sky — a woman riding a branch of cloud pine as though it were a flying horse. A **witch**.
+
+(set: $foundWitch to true)
+
+[[Speak with the witch->Witch Encounter]]
+
+](else:)[
+
+The night is quiet. Lyra has the strange sensation of being watched from above, but when she looks, there's only stars.
+
+*"Did you feel that, Pan?"*
+
+*"Yes. We should come up here again. I think something's waiting for us."*
+
+[[Return to the ship->The Gyptian Ship]]
+]
+
+
+:: Speak with Ma Costa {"position":"1500,50","size":"100,100"}
+
+
+(if: (count: (history:), "Speak with Ma Costa") >= 2)[
+Ma Costa pours another cup of chocolate and looks at Lyra with eyes full of love and grief.
+
+*"There's something you need to know, child. Something about your mother."*
+
+Pan goes absolutely still.
+
+*"Your mother is Mrs Coulter."*
+
+The silence that follows is deafening. Lyra feels the floor tilt beneath her. Pan cycles through forms in a frantic blur — cat, bird, mouse, snake —
+
+*"And my father?"* Lyra manages.
+
+*"Lord Asriel."*
+
+(set: $knowsMotherTruth to true)
+(set: $panState to "shattered")
+
+[[Return to the ship->The Gyptian Ship]]
+
+](else:)[
+Ma Costa wraps her in a blanket and presses a mug of hot chocolate into her hands.
+
+*"You're a brave one, Lyra. The gyptians have always watched over you, even if you didn't know it."*
+
+*"Why?"* asks Lyra.
+
+Ma Costa hesitates. *"Come back and see me again. There are things you need to hear, but first you need to trust me."*
+
+(set: $allies to $allies + 1)
+
+[[Return to the ship->The Gyptian Ship]]
+]
+
+
+:: Start {"position":"100,200","size":"100,100"}
+
+(set: $accuracy to 0)
+(set: $allies to 0)
+(set: $coulterRoute to false)
+(set: $knowsMotherTruth to false)
+(set: $sawBilly to false)
+(set: $foundWitch to false)
+(set: $hasDocs to false)
+(set: $panState to "alert")
+
+# The Girl and the Dust
+
+---
+
+Night in Jordan College, Oxford. Lyra Belacqua is hiding inside the wardrobe of the Retiring Room — a place no child should ever enter.
+
+Pantalaimon, her dæmon, trembles on her shoulder in the form of a moth. *"Lyra, someone's coming,"* he whispers. *"Footsteps. Many."*
+
+The door swings open. She recognizes the Rector's voice — and another, deep and commanding, that she's never heard before. They're speaking about something called "Dust."
+
+[[Stay hidden and listen->Stay Hidden]]
+[[Try to slip out before they see her->Try to Escape]]
+
+
+:: Stay Hidden {"position":"250,100","size":"100,100"}
+
+(set: $allies to $allies + 1)
+(set: $panState to "tense")
+
+Lyra holds her breath. Through the crack in the wardrobe door, she sees the Rector accompanied by Lord Asriel — a tall man with fierce eyes and a snow leopard dæmon that fills the room with its presence.
+
+Asriel projects photographs onto the wall. Frozen landscapes. Children. And something else: a strange rain of golden particles falling over human figures.
+
+*"This is Dust,"* says Asriel. *"And the Magisterium will do anything to destroy it."*
+
+Pan stiffens. *"What does he mean by anything?"* he breathes, barely audible.
+
+Lyra hears a name: **Bolvangar**. And a word that chills her blood: **intercision**. The severing of a child from their dæmon.
+
+When the scholars leave, Lyra climbs out of the wardrobe, trembling. She heard everything. She understands nothing. Yet.
+
+The next morning, the Rector calls her aside. His hands tremble as he presses a golden instrument into her palms — an **alethiometer**. *"Keep this hidden, Lyra. It tells the truth, to those who know how to read it. You may need it before long."*
+
+[[Go to the rooftops to think->Jordan Rooftops]]
+
+
+:: The Disappearance {"position":"900,200","size":"100,100"}
+
+Everything changes in a single morning.
+
+Roger is gone.
+
+Lyra searches the entire college — rooftops, kitchens, canals. Nothing. Pan flies over Oxford as a swallow, scanning every street. Nothing.
+
+*"The Gobblers,"* Lyra says, with a cold fury she's never felt before. *"They've taken Roger."*
+
+That same day, a dazzling woman arrives at Jordan College in a sleek black car. **Mrs Coulter**, with her golden monkey dæmon. She smiles as though the world belongs to her.
+
+*"Lyra, darling,"* she says, voice like silk. *"I'd love for you to come live with me in London. There's so much I could teach you..."*
+
+Before Lyra leaves, the Rector pulls her aside. *"The alethiometer I gave you — guard it with your life. Let no one know you have it. Especially not her."*
+
+[[Accept Mrs Coulter's offer->Go with Coulter]]
+[[Refuse her and find the gyptians->Find the Gyptians]]
+
+
+:: The Escape {"position":"3400,200","size":"100,100"}
+
+
+(set: $timer to 20)
+
+The corridors of Bolvangar are in chaos. The alarm screams without pause. Lyra guides Roger and a group of children toward the exit.
+
+Pan flies ahead as an owl, scouting.
+
+*"Left!"* Pan shrieks. *"No — right! Guards on the left!"*
+
+
+
+(live: 1s)[
+(set: $timer to it - 1)
+(if: $timer <= 6)[⏱ $timer SECONDS](else:)[⏱ $timer seconds]
+(if: $timer is 0)[
+(stop:)(goto: "Escape Failed")
+]
+]
+
+[[Head for the main doors with all the children->Escape With Everyone]]
+[[Crawl through the vents with Roger only->Escape With Roger]]
+
+
+:: The Gyptian Ship {"position":"1400,200","size":"100,100"}
+
+
+
+The gyptian ship smells of timber and warm stew. Lyra feels safer than she has in weeks. Around her, families prepare for the expedition North to rescue their children.
+
+Pan curls in ermine form on her lap. *"What now?"*
+
+The gyptians are nearly ready to sail, but there's time to prepare.
+
+[[Speak with Ma Costa->Speak with Ma Costa]]
+[[Go up to the deck->Ship Deck]]
+[[Find Billy Costa->Billy Costa]]
+[[Listen to rumours on the wharf->Wharf Rumours]]
+[[Consult the alethiometer->Consult Alethiometer Ship]]
+
+(if: (count: (history:), "The Gyptian Ship") >= 3)[
+
+---
+
+John Faa, king of the gyptians, rises to his feet. *"It's time. We sail North."*
+
+[[Set sail for Bolvangar->Departure North]]
+]
+
+
+:: The Machine {"position":"3000,200","size":"100,100"}
+
+
+
+(set: $timer to 30)
+
+## The Intercision Machine
+
+Roger is inside the cage. Salcilia screams in the other compartment. The machine hums to life. A silver blade — made of something that isn't metal — descends slowly.
+
+Pan shrieks: *"LYRA, DO SOMETHING!!"*
+
+
+
+(live: 1s)[
+(set: $timer to it - 1)
+(if: $timer <= 8)[⏱ $timer SECONDS](else:)[⏱ $timer seconds]
+(if: $timer is 0)[
+(stop:)(goto: "Too Late")
+]
+]
+
+[[Destroy the machine with your bare hands->Destroy Machine]]
+[[Scream for the gyptians->Call for Help]]
+[[Create a distraction so Roger can escape->Create Distraction]]
+
+
+:: Too Late {"position":"3200,400","size":"100,100"}
+
+(set: $panState to "broken")
+
+Lyra couldn't decide in time.
+
+The machine completed its cycle. When the hum fades, Roger is still alive, but something in his eyes has gone out. Salcilia is gone. A tuft of white fur lies on the floor of the cage.
+
+*"Where's Salcilia?"* Roger asks, his voice hollow. *"I'm cold."*
+
+Pan sinks against Lyra's chest, weeping the way only a dæmon can: soundless, a tremor that reaches the bone.
+
+Lyra has failed. But the other children are still here.
+
+[[Get Roger and the others out->The Escape]]
+
+
+:: Try to Escape {"position":"250,300","size":"100,100"}
+
+(set: $panState to "nervous")
+
+Lyra eases the wardrobe door open, but the hinge betrays her with a sharp creak. An elderly scholar — Professor Dorian — catches her mid-step.
+
+*"Lyra? What on earth are you doing here?"*
+
+Pan shifts into a cat, trying to look innocent. Lyra improvises — something about chasing her cat through the corridors. It's a weak lie, and they both know it.
+
+The Professor studies her, severe but oddly gentle. *"Go to bed. And Lyra — be careful what you overhear in this college. Not everything that's hidden is wicked."*
+
+She missed Asriel's full presentation, but the Professor's warning stays with her. The next morning, she finds a note slipped under her door: *"Dust is not what the Magisterium claims. Library, north section, third shelf."*
+
+And alongside the note: a golden instrument wrapped in cloth, with a message from the Rector. *"This is an alethiometer. Guard it well, Lyra. It tells the truth."*
+
+(set: $allies to $allies + 1)
+
+[[Head to the rooftops->Jordan Rooftops]]
+
+
+:: Ventilation Infiltration {"position":"2150,100","size":"100,100"}
+
+
+(set: $dice to (random: 1, 6))
+
+Lyra pulls herself into the shaft. Tight, dark, freezing. Pan goes ahead as a mouse, scouting the way.
+
+(if: $dice >= 3)[
+The shaft opens into an empty storeroom. Lyra drops silently onto a stack of cardboard boxes. Pan shakes off the dust.
+
+*"We're in,"* he whispers.
+
+[[Explore the corridors->Bolvangar Doors]]
+
+](else:)[
+The shaft narrows. Pan squeaks: *"We don't fit, Lyra!"*
+
+She has to reverse, losing precious time. A guard hears the scraping and comes to investigate.
+
+*"Run!"* Pan hisses.
+
+(set: $allies to $allies - 1)
+(if: $allies < 0)[(set: $allies to 0)]
+
+[[Evade the guard->Chase Scene]]
+]
+
+
+:: Visit Roger {"position":"550,200","size":"100,100"}
+
+Down in the kitchens, Roger is peeling potatoes alongside the other kitchen boys. His dæmon Salcilia plays as a terrier at his feet, tumbling with Pan.
+
+*"Lyra!"* Roger grins. *"Come to steal buns again?"*
+
+*"Roger — have you heard of the Gobblers?"* Lyra drops her voice.
+
+His face darkens. *"My mate Billy, the gyptian boy — disappeared last week. His mum's beside herself. They say it was them."*
+
+Lyra takes his hand. *"Whatever happens, I'll look after you. I promise."*
+
+A promise that will weigh more than she can possibly know.
+
+[[Back to the rooftops->Jordan Rooftops]]
+
+
+:: Wharf Rumours {"position":"1500,350","size":"100,100"}
+
+
+(set: $rumour to (either: "They say Lord Asriel is imprisoned in Svalbard, guarded by the armoured bears", "Magisterium airships have been spotted flying north, loaded with scientific equipment", "A witch was shot down over the sea — they say she carried a message for the gyptians"))
+
+Lyra wanders the wharf where gyptians load provisions. Conversations drift in low voices.
+
+An old gyptian leans close: *"$rumour"*
+
+(if: $rumour contains "Asriel")[
+Pan thinks aloud: *"Your father, a prisoner. Maybe the alethiometer can show us how to free him."*
+](else-if: $rumour contains "airships")[
+Pan scans the sky: *"The Magisterium is preparing something big up north. We need to be careful."*
+](else:)[
+Pan whispers: *"The witches are on our side. That's something, isn't it?"*
+]
+
+[[Return to the ship->The Gyptian Ship]]
+
+
+:: Witch Encounter {"position":"1650,100","size":"100,100"}
+
+The witch alights with the softness of a falling leaf. Her dæmon, a grey goose, settles beside her. She looks young, but her eyes hold centuries.
+
+*"I am Serafina Pekkala, queen of the Lake Enara witch clan,"* she says. *"I've been watching you, Lyra. The alethiometer speaks to you, doesn't it?"*
+
+Lyra nods, unsure what to say.
+
+*"The witches know a prophecy about a girl who can read the alethiometer without being taught. A girl who will decide the fate of Dust. That girl is you."*
+
+Pan trembles. Lyra swallows hard.
+
+*"When you reach Bolvangar, remember this: Dust is not sin. Dust is what makes us human."*
+
+Serafina rises into the night and vanishes among the stars.
+
+(set: $allies to $allies + 2)
+
+[[Return to the ship->The Gyptian Ship]]
+
+
+:: Wrong Reading 1 {"position":"700,400","size":"100,100"}
+
+The needles spin aimlessly, rejecting her interpretation. Lyra frowns.
+
+Pan sighs. *"That's not it. But don't worry — you'll get the hang of it."*
+
+Frustrating. But Lyra Belacqua has never been the kind to give up.
+
+[[Back to the rooftops->Jordan Rooftops]]
+
+
+:: Wrong Reading 2 {"position":"1650,500","size":"100,100"}
+
+The needles spin wildly, rejecting the interpretation. Lyra sighs.
+
+*"It's all right,"* Pan says. *"What matters is we know where we're going. The alethiometer will guide us when it counts."*
+
+[[Return to the ship->The Gyptian Ship]]
+
+
+:: StoryStylesheet [stylesheet]
+
+/* ============================================
+   THE GIRL AND THE DUST — UI THEME
+   Dark atmospheric / Northern Lights / Gold
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* --- CSS VARIABLES --- */
+:root {
+  --bg-deep: #060a14;
+  --bg-dark: #0a1025;
+  --bg-card: rgba(12, 18, 42, 0.85);
+  --gold: #c9a84c;
+  --gold-light: #f0d77b;
+  --gold-dim: #8a7233;
+  --aurora-green: rgba(45, 212, 160, 0.12);
+  --aurora-purple: rgba(124, 92, 191, 0.10);
+  --aurora-blue: rgba(56, 140, 224, 0.08);
+  --text-main: #ddd3c1;
+  --text-dim: #9e9585;
+  --text-bright: #f5eed9;
+  --danger: #c44;
+  --danger-glow: rgba(204, 68, 68, 0.3);
+  --success-green: #4ecca3;
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Crimson Text', Georgia, serif;
+  --transition-speed: 0.6s;
+}
+
+/* --- GLOBAL RESET & BASE --- */
+tw-story {
+  background: var(--bg-deep);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 1.15em;
+  line-height: 1.8;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+tw-sidebar {
+  display: none !important;
+}
+
+/* --- NORTHERN LIGHTS BACKGROUND EFFECT --- */
+tw-story::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -20%;
+  right: -20%;
+  height: 100%;
+  background:
+    radial-gradient(ellipse at 30% 10%, var(--aurora-green) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 5%, var(--aurora-purple) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 15%, var(--aurora-blue) 0%, transparent 55%);
+  animation: auroraPulse 12s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+tw-story::after {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 65%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 15%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 45%, rgba(255,255,255,0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 80%, rgba(255,255,255,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 85%, rgba(255,255,255,0.25) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 45% 50%, rgba(201,168,76,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 10%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5% 50%, rgba(255,255,255,0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 35%, rgba(255,255,255,0.15) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 78% 62%, rgba(201,168,76,0.3) 0%, transparent 100%);
+  animation: starsTwinkle 6s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes auroraPulse {
+  0% { opacity: 0.4; transform: translateX(-3%) translateY(0); }
+  33% { opacity: 0.7; transform: translateX(2%) translateY(-2%); }
+  66% { opacity: 0.5; transform: translateX(-1%) translateY(1%); }
+  100% { opacity: 0.6; transform: translateX(3%) translateY(-1%); }
+}
+
+@keyframes starsTwinkle {
+  0% { opacity: 0.5; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.6; }
+}
+
+/* --- PASSAGE CONTAINER --- */
+tw-passage {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2.5em 2em;
+  position: relative;
+  z-index: 1;
+  animation: passageFadeIn var(--transition-speed) cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes passageFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* --- TYPOGRAPHY --- */
+h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--gold);
+  text-align: center;
+  font-size: 2.2em;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 30px rgba(201,168,76,0.3), 0 0 60px rgba(201,168,76,0.1);
+  margin-bottom: 0.3em;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--gold);
+  text-align: center;
+  font-size: 1.5em;
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 20px rgba(201,168,76,0.2);
+}
+
+em {
+  color: var(--text-bright);
+  font-style: italic;
+}
+
+strong {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--gold-dim) 50%, transparent 100%);
+  margin: 2em 0;
+  opacity: 0.5;
+}
+
+/* --- STYLIZED CHOICE BUTTONS --- */
+tw-link, .enchantment-link {
+  display: block;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 0.85em;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 14px 22px;
+  margin: 10px 0;
+  background: linear-gradient(135deg, rgba(201,168,76,0.08) 0%, rgba(201,168,76,0.03) 100%);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 4px;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+tw-link::before, .enchantment-link::before {
+  content: '›';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-5px);
+  opacity: 0;
+  color: var(--gold-light);
+  font-size: 1.3em;
+  transition: all 0.35s ease;
+}
+
+tw-link:hover, .enchantment-link:hover {
+  color: var(--gold-light);
+  background: linear-gradient(135deg, rgba(201,168,76,0.15) 0%, rgba(201,168,76,0.06) 100%);
+  border-color: rgba(201,168,76,0.5);
+  padding-left: 32px;
+  box-shadow: 0 0 20px rgba(201,168,76,0.1), inset 0 0 20px rgba(201,168,76,0.03);
+  text-shadow: 0 0 10px rgba(201,168,76,0.3);
+}
+
+tw-link:hover::before, .enchantment-link:hover::before {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+tw-link:active, .enchantment-link:active {
+  background: linear-gradient(135deg, rgba(201,168,76,0.22) 0%, rgba(201,168,76,0.1) 100%);
+  transform: scale(0.98);
+}
+
+/* --- INLINE LINKS (for non-choice links) --- */
+tw-expression[name="link"] tw-link {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px dotted var(--gold-dim);
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-size: 1em;
+  letter-spacing: normal;
+}
+
+tw-expression[name="link"] tw-link:hover {
+  padding-left: 0;
+  box-shadow: none;
+  border-bottom-color: var(--gold);
+  background: none;
+}
+
+tw-expression[name="link"] tw-link::before {
+  display: none;
+}
+
+/* --- IMAGES --- */
+img {
+  display: block;
+  margin: 1.5em auto;
+  max-width: 100%;
+  border-radius: 6px;
+  border: 1px solid rgba(201,168,76,0.15);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.4), 0 0 40px rgba(201,168,76,0.05);
+}
+
+/* --- TIMER BAR --- */
+.timer-container {
+  width: 100%;
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  margin: 1.2em 0;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(201,168,76,0.1);
+}
+
+.timer-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+  box-shadow: 0 0 12px rgba(201,168,76,0.5);
+  transform-origin: left;
+}
+
+.timer-bar-fill.t30 {
+  animation: timerShrink30 30s linear forwards;
+}
+.timer-bar-fill.t20 {
+  animation: timerShrink20 20s linear forwards;
+}
+
+@keyframes timerShrink30 {
+  0% { width: 100%; background: linear-gradient(90deg, var(--success-green), var(--gold-light)); }
+  50% { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+  80% { background: linear-gradient(90deg, var(--danger), var(--gold)); }
+  100% { width: 0%; background: var(--danger); box-shadow: 0 0 20px var(--danger-glow); }
+}
+
+@keyframes timerShrink20 {
+  0% { width: 100%; background: linear-gradient(90deg, var(--success-green), var(--gold-light)); }
+  50% { background: linear-gradient(90deg, var(--gold), var(--gold-light)); }
+  80% { background: linear-gradient(90deg, var(--danger), var(--gold)); }
+  100% { width: 0%; background: var(--danger); box-shadow: 0 0 20px var(--danger-glow); }
+}
+
+.timer-text {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  margin-top: 0.5em;
+  text-shadow: 0 0 10px rgba(201,168,76,0.3);
+}
+
+.timer-text.urgent {
+  color: var(--danger);
+  text-shadow: 0 0 15px var(--danger-glow);
+  animation: urgentPulse 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes urgentPulse {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}
+
+/* --- PAN'S STATE INDICATOR --- */
+.pan-state {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.7em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  background: rgba(201,168,76,0.06);
+  border: 1px solid rgba(201,168,76,0.12);
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 1em;
+}
+
+/* --- ENDING CARDS --- */
+.ending-card {
+  background: linear-gradient(135deg, rgba(201,168,76,0.08) 0%, rgba(12,18,42,0.9) 100%);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 8px;
+  padding: 1.5em 2em;
+  margin-top: 2em;
+  text-align: center;
+}
+
+.ending-card .ending-title {
+  font-family: var(--font-display);
+  color: var(--gold);
+  font-size: 0.8em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+}
+
+.ending-card .ending-note {
+  font-size: 0.9em;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+/* --- SECRET ENDING GLOW --- */
+.secret-glow {
+  text-shadow: 0 0 20px rgba(201,168,76,0.5), 0 0 40px rgba(201,168,76,0.2);
+  animation: secretPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes secretPulse {
+  from { text-shadow: 0 0 20px rgba(201,168,76,0.3), 0 0 40px rgba(201,168,76,0.1); }
+  to { text-shadow: 0 0 30px rgba(201,168,76,0.6), 0 0 60px rgba(201,168,76,0.2); }
+}
+
+/* --- REQUIREMENT CHECKLIST --- */
+.checklist {
+  background: rgba(255,255,255,0.03);
+  border-radius: 6px;
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  border-left: 3px solid var(--gold-dim);
+}
+
+.checklist-item {
+  font-family: var(--font-display);
+  font-size: 0.8em;
+  letter-spacing: 0.04em;
+  padding: 0.3em 0;
+  color: var(--text-dim);
+}
