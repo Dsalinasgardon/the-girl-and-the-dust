@@ -1,4 +1,4 @@
-# the-girl-and-the-dust
+#The girl and the dust
 An interactive narrative experience set in Philip Pullman's His Dark Materials universe, built with HTML, CSS, and JavaScript.
 
 The Girl and the Dust — a branching interactive narrative where you play as Lyra Belacqua during the events of The Golden Compass. 46 passages, 3 endings (including a secret one), timed decision scenes, alethiometer interpretation mechanics, history-based unlocks, and randomized elements. Built as a standalone HTML file with atmospheric UI (northern lights, animated timers, styled choices). Academic project for RTVE's VR Narrative Design course.
